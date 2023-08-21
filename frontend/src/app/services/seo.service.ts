@@ -11,6 +11,8 @@ export class SeoService {
   network = '';
   baseTitle = 'mempool';
 
+  canonicalLink: HTMLElement = document.getElementById('canonical');
+
   constructor(
     private titleService: Title,
     private metaService: Meta,
@@ -50,6 +52,16 @@ export class SeoService {
   setEnterpriseTitle(title: string) {
     this.baseTitle = title + ' - ' + this.baseTitle;
     this.resetTitle();
+  }
+
+  updateCanonical(path) {
+    let domain = 'mempool.space';
+    if (this.stateService.env.BASE_MODULE === 'liquid') {
+      domain = 'liquid.network';
+    } else if (this.stateService.env.BASE_MODULE === 'bisq') {
+      domain = 'bisq.markets';
+    }
+    this.canonicalLink.setAttribute('href', 'https://' + domain + path);
   }
 
   getTitle(): string {
