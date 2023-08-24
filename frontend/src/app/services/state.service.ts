@@ -113,6 +113,7 @@ export class StateService {
   utxoSpent$ = new Subject<object>();
   difficultyAdjustment$ = new ReplaySubject<DifficultyAdjustment>(1);
   mempoolTransactions$ = new Subject<Transaction>();
+  mempoolRemovedTransactions$ = new Subject<Transaction>();
   mempoolTxPosition$ = new Subject<{ txid: string, position: MempoolPosition}>();
   blockTransactions$ = new Subject<Transaction>();
   isLoadingWebSocket$ = new ReplaySubject<boolean>(1);
