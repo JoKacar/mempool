@@ -45,7 +45,7 @@
     "bitcoinjs-lib": "~6.1.3",
     "crypto-js": "~4.1.1",
     "express": "~4.18.2",
-    "maxmind": "~4.3.11",
+    "maxmind": "~4.3.18",
     "mysql2": "~3.6.0",
     "rust-gbt": "file:./rust-gbt",
     "redis": "^4.6.6",
