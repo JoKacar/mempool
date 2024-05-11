@@ -1,4 +1,4 @@
-FROM node:20.11-bookworm-slim AS builder
+FROM node:20.13.0-bookworm-slim AS builder
 
 ARG commitHash
 ENV MEMPOOL_COMMIT_HASH=${commitHash}
@@ -17,7 +17,7 @@ ENV PATH="/root/.cargo/bin:$PATH"
 RUN npm install --omit=dev --omit=optional
 RUN npm run package
 
-FROM node:20.11-bookworm-slim
+FROM node:20.13.0-bookworm-slim
 
 WORKDIR /backend
 
